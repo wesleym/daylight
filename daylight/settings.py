@@ -1,7 +1,11 @@
 # Django settings for daylight project.
 
+import os.path # for SITE_ROOT
+
 DEBUG = True
 TEMPLATE_DEBUG = DEBUG
+
+SITE_ROOT = os.path.dirname(os.path.join('..', os.path.realpath(__file__)))
 
 ADMINS = (
     ('Wesley Moy', 'wesley.moy@gmail.com'),
@@ -106,6 +110,7 @@ ROOT_URLCONF = 'daylight.urls'
 WSGI_APPLICATION = 'daylight.wsgi.application'
 
 TEMPLATE_DIRS = (
+    os.path.join(SITE_ROOT, 'templates'),
     # Put strings here, like "/home/html/django_templates" or "C:/www/django/templates".
     # Always use forward slashes, even on Windows.
     # Don't forget to use absolute paths, not relative paths.
